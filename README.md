@@ -1,55 +1,50 @@
 # DevOps Automation Project – CI/CD to AWS EC2
 
-##  Overview
-This project demonstrates an end-to-end CI/CD pipeline that automatically deploys an application to an AWS EC2 instance using GitHub Actions and Bash scripting.
+## Overview
+This project demonstrates a complete **CI/CD pipeline** that automatically deploys a web application to an **AWS EC2 instance** using **GitHub Actions and SSH-based deployment**.
+
+The goal is to eliminate manual server interaction and achieve a repeatable, reliable deployment workflow.
 
 ---
 
-##  Architecture
-**Flow:**
-GitHub Repo → GitHub Actions → SSH → AWS EC2 → Nginx
+## Architecture
+- Source Code: GitHub Repository
+- CI/CD: GitHub Actions
+- Server: AWS EC2 (Ubuntu)
+- Web Server: Nginx
+- Deployment Method: SSH + Bash Script
 
 ---
 
-##  Technologies Used
-- AWS EC2
-- Ubuntu Linux
-- GitHub Actions (CI/CD)
-- Bash Scripting
-- Nginx
-- SSH (Key-based authentication)
+## CI/CD Workflow
+1. Code is pushed to the `main` branch
+2. GitHub Actions workflow is triggered
+3. Pipeline connects securely to EC2 via SSH
+4. Deployment script runs automatically
+5. Nginx serves the updated application
 
 ---
 
-##  CI/CD Workflow
-- Triggered on every push to the `main` branch
-- GitHub Actions connects to EC2 via SSH
-- Latest code is pulled on the server
-- Deployment script runs automatically
+## Key Learnings
+- Implemented automated deployments using GitHub Actions
+- Configured secure SSH access for CI/CD pipelines
+- Automated Nginx-based application deployment
+- Applied real-world DevOps CI/CD practices
 
 ---
 
-##  Proof of Work
+## Proof of Work
 
-###  GitHub Actions – Successful CI/CD Pipeline
+### GitHub Actions – Successful CI/CD Pipeline
 ![GitHub Actions Success](screenshots/github-actions-success.png)
 
-###  Live Application Running on EC2
+### Live Application Running on EC2
 ![Website Live](screenshots/website-live.png)
 
-###  AWS EC2 Instance Running
+### AWS EC2 Instance Running
 ![EC2 Instance](screenshots/ec2-instance.png)
 
 ---
 
-##  Key Learnings
-- Built CI/CD pipelines from scratch
-- Used SSH keys securely with GitHub Secrets
-- Automated deployments using Bash
-- Debugged real-world pipeline issues
-- Deployed applications on AWS EC2
-
----
-
-##  Outcome
-A fully automated deployment pipeline with zero manual server intervention.
+## Outcome
+A fully automated deployment pipeline with **zero manual server intervention**.
