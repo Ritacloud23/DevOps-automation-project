@@ -1,44 +1,53 @@
-# DevOps Automation Project – CI/CD to AWS EC2
+# DevOps Automation Project – CI/CD on AWS EC2 (Docker-Based)
 
 ## Overview
-This project demonstrates a complete **CI/CD pipeline** that automatically deploys a web application to an **AWS EC2 instance** using **GitHub Actions and SSH-based deployment**.
+This project demonstrates a complete **Docker-based CI/CD pipeline**
+that automatically deploys a web application to an **AWS EC2 instance**
+using **GitHub Actions and SSH-based automation**.
 
-The goal is to eliminate manual server interaction and achieve a repeatable, reliable deployment workflow.
+The project reflects a real-world DevOps journey, evolving from a
+traditional **Nginx deployment** to a fully **containerized Docker deployment**
+with zero manual server intervention.
 
 ---
 
 ## Architecture
 - Source Code: GitHub Repository
-- CI/CD: GitHub Actions
+- CI/CD Tool: GitHub Actions
 - Server: AWS EC2 (Ubuntu)
-- Web Server: Nginx
+- Container Runtime: Docker
+- Web Server (Containerized): Nginx
 - Deployment Method: SSH + Bash Script
 
 ---
 
-## CI/CD Workflow
+## CI/CD Workflow (Current – Docker Deployment)
 1. Code is pushed to the `main` branch
 2. GitHub Actions workflow is triggered
-3. Pipeline connects securely to EC2 via SSH
-4. Deployment script runs automatically
-5. Nginx serves the updated application
+3. Pipeline connects securely to the EC2 instance via SSH
+4. Application files are updated on the server
+5. Docker image is built on EC2
+6. Existing container is stopped and removed (if running)
+7. A new Docker container is deployed and exposed on port `80`
+8. Application becomes live via the EC2 public IP
 
 ---
 
 ## Key Learnings
-- Implemented automated deployments using GitHub Actions
-- Configured secure SSH access for CI/CD pipelines
-- Automated Nginx-based application deployment
-- Applied real-world DevOps CI/CD practices
+- Built Docker images for web applications
+- Automated Docker deployments using GitHub Actions
+- Deployed containerized applications on AWS EC2
+- Solved real-world DevOps issues (port conflicts, container replacement)
+- Implemented zero-downtime style CI/CD workflows
 
 ---
 
 ## Proof of Work
 
-### GitHub Actions – Successful CI/CD Pipeline
+### GitHub Actions – Successful Docker CI/CD Pipeline
 ![GitHub Actions Success](screenshots/github-actions-success.png)
 
-### Live Application Running on EC2
+### Dockerized Application Running on AWS EC2
 ![Website Live](screenshots/website-live.png)
 
 ### AWS EC2 Instance Running
@@ -47,4 +56,6 @@ The goal is to eliminate manual server interaction and achieve a repeatable, rel
 ---
 
 ## Outcome
-A fully automated deployment pipeline with **zero manual server intervention**.
+A fully automated **Docker-based CI/CD pipeline** that deploys applications
+to AWS EC2 with **zero manual server intervention**, demonstrating
+production-style DevOps practices.
