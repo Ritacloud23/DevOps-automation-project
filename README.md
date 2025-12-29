@@ -48,7 +48,7 @@ with zero manual server intervention.
 ![GitHub Actions Success](screenshots/github-actions-success.png)
 
 ### Dockerized Application Running on AWS EC2
-![Website Live](screenshots/website-live.png (3))
+![Website Live](screenshots/website-live.png)
 
 ### AWS EC2 Instance Running
 ![EC2 Instance](screenshots/ec2-instance.png)
